@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useUserAuth } from "../context/UserAuthContext";
 const useLoggedinuser = () => {
   const { user } = useUserAuth();
@@ -6,7 +6,7 @@ const useLoggedinuser = () => {
   const [loggedinuser, setloggedinuser] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/loggedinuser?email=${email}`)
+    fetch(`https://xcom-server.vercel.app/loggedinuser?email=${email}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data)

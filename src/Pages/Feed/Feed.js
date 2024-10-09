@@ -6,11 +6,11 @@ const Feed = () => {
   const [post, setpost] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/post")
+    fetch("https://xcom-server.vercel.app/post")
       .then((res) => res.json())
       .then((data) => {
         setpost(data);
-      })
+      });
       
   },[post]);
   // console.log(post)

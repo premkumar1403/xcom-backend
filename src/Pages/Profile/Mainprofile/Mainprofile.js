@@ -18,7 +18,7 @@ const Mainprofile = ({ user }) => {
   const [post, setpost] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userpost?email=${user?.email}`)
+    fetch(`https://xcom-server.vercel.app/userpost?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setpost(data);
@@ -45,7 +45,7 @@ const Mainprofile = ({ user }) => {
         };
         setisloading(false);
         if (url) {
-          fetch(`http://localhost:5000/userupdate/${user?.email}`, {
+          fetch(`https://xcom-server.vercel.app/userupdate/${user?.email}`, {
             method: "PATCH",
             headers: {
               "content-type": "application/json",
@@ -84,7 +84,7 @@ const Mainprofile = ({ user }) => {
         };
         setisloading(false);
         if (url) {
-          fetch(`http://localhost:5000/userupdate/${user?.email}`, {
+          fetch(`https://xcom-server.vercel.app/userupdate/${user?.email}`, {
             method: "PATCH",
             headers: {
               "content-type": "application/json",
